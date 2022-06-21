@@ -4,8 +4,8 @@ public class StringReverse {
     public static void main (String[] args) {
         String stringToRevers1= "I’m going to go to school today morning1.";
         String stringToRevers2= "I’m going to go to school today morning2.";
-        System.out.println("Reversed sentence:" +  (reversedSentence1(stringToRevers1)));
-        System.out.println("Reversed sentence:" +  (reversedSentence2(stringToRevers2)));
+        System.out.println("Reversed sentence:" + (reversedSentence1(stringToRevers1)));
+        System.out.println("Reversed sentence:" + (reversedSentence2(stringToRevers2)));
 
 
         String a = new StringBuilder("I’m going to go to school today morning3.").reverse().toString();
