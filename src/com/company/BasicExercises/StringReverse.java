@@ -9,7 +9,7 @@ public class StringReverse {
 
 
         String a = new StringBuilder("I’m going to go to school today morning3.").reverse().toString();
-        System.out.println("Reversed sentence:" +  a);
+        System.out.println("Reversed sentenceeeeeee:" +  a);
 
     }
     public static String reversedSentence1(String sentence){
