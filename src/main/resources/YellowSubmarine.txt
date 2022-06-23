@@ -39,12 +39,3 @@ We all live in a yellow submarine
 Yellow submarine, yellow submarine
 
 
-1. Find in Google song “beatles yellow submarine”
-2. Save this song as String
-3. Remove all “,” , “\n ” and make all words to lover case (Programmatically!)
-4. Make an array from the string (array of words)
-5. Print to consol word and how many times it apeared in the array
-
-
-Stworzyć projekt z mavene'm
-
