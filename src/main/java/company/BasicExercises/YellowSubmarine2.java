@@ -2,10 +2,9 @@ package company.BasicExercises;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
 import java.util.Scanner;
 
-public class YellowSubmarine {
+public class YellowSubmarine2 {
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -13,29 +12,31 @@ public class YellowSubmarine {
 
 
         File file = new File(myFile);
+        int counter = 0;
         Scanner text = new Scanner(file);
-        HashMap<String, Integer> words = new HashMap<>();
+        Scanner newword = new Scanner(System.in);
+        String word = newword.nextLine();
 
 
         while (text.hasNextLine()) {
             String line = text.nextLine();
             line = line.replace(",", "");
             line = line.replace("\n ", "");
-            line = line.replace("(", "").replace(")", "");
+            line = line.replace("(", "");
+            line = line.replace(")", "");
             line = line.toLowerCase();
-            String[] wordsInLine = line.split(" ");
-            for (String s : wordsInLine) {
-                if (!words.containsKey(s)) {
-                    words.put(s, 1);
-                } else {
-                    words.put(s, words.get(s) + 1);
+            String[] pom = line.split(" ");
+            for (String c : pom) {
+                System.out.println(c);
+                if (c.equals(word)) {
+                    counter++;
+
                 }
+
             }
 
-
         }
-        System.out.println(words);
-
+        System.out.println(counter);
 
         text.close();
 
