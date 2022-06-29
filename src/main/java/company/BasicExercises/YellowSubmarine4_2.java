@@ -5,12 +5,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class YellowSubmarine4 {
+public class YellowSubmarine4_2 {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        String myFile = "src/main/resources/YellowSubmarine.txt";
 
+        String myFile = "src/main/resources/YellowSubmarine.txt";
 
         File file = new File(myFile);
         Scanner text = new Scanner(file);
@@ -27,13 +27,13 @@ public class YellowSubmarine4 {
 
             for (String s : wordsInLine) {
                 words.add(s);
-                words.remove("yellow");
-                words.remove("submarine");
 
             }
 
-
         }
+        words.removeIf(word -> (word.equals("yellow") || word.equals("submarine")));
+
+
         System.out.println(words);
 
 

@@ -16,7 +16,7 @@ public class YellowSubmarine3 {
         File file = new File(myFile);
         Scanner text = new Scanner(file);
 
-        ArrayList<String> words = new ArrayList<String>();
+        ArrayList words = new ArrayList<>();
 
 
         while (text.hasNextLine()) {
