@@ -1,0 +1,412 @@
+4. Variables, Data Types, and Math Operators
+
+Task 1
+
+What will be the output of the following program?
+
+
+public class Precedence {
+   public static void main(String[] args) {
+       int x = 20;
+       int y = 10;
+       double z = x++ - y * 7 / --y + x * 10;
+       System.out.println(z);
+   }
+}
+
+OUTPUT: 223
+
+
+
+What is the range of int in Java? INT: 32bit: -2147483648 to 214748364
+What is the range of char in Java? CHAR: 16bit: 0 to 65,535
+
+Task 4
+
+Order the following in the increasing order of the byte size:
+
+++char
+
+byte
+
+int
+
+long
+
+
+
+
+
+
+5.Conditional Logic, Looping, and Arrays
+
+
+Finding a maximum value in array of 100 integers
+
+Integer[] numbers = { 2, 4, 7, 5, 9 };
+int maximum = Collections.max(Arrays.asList(numbers))
+
+
+
+6.Representing Complex Types with Classes
+Task 1
+
+What type of access (private, public) does the member of the class have by default?
+
+private
+
+
+
+Task 2
+
+Given the following declaration of a class, which fields are accessible from outside the package com.corporation.project?
+
+
+package com.corporation.project;
+public class MyClass {
+ int i;
+ public int j;
+ protected int k;
+ private int l;
+}
+
+
+Select the two correct answers.
+
+(a)  Field i is accessible in all classes in other packages.
+(b)  Field j is accessible in all classes in other packages.X
+(c)  Field k is accessible in all classes in other packages.
+(d)  Field k is accessible in subclasses only in other packages. X
+(e)  Field l is accessible in all classes in other packages.
+(f)  Field l is accessible in subclasses only in other packages.
+
+Answer: b and d
+
+
+7.Class Initializers and Constructors
+Task 1
+Can a constructor be called by the usual class method?
+
+
+class Tricky {
+   int num;
+   Tricky(int n) {
+       num = n;
+   }
+   Tricky inc() {
+       Tricky temp = new Tricky(num + 10);
+       return temp;
+   }
+}
+
+public class TrickyQuestion {
+   public static void main(String s[]) {
+       Tricky num1 = new Tricky(10);
+       Tricky num2;
+       num2 = num1.inc();
+       System.out.print("The program will display the output as: ");
+       System.out.print(num1.num + ",");
+       System.out.print(num2.num + ",");
+       num2 = num1.inc();
+       System.out.print(num2.num);
+   }
+}
+
+
+The program will display the output as:
+The program will display the output as: 10,10,10
+The program will display the output as: 10,20,30
+The program will display the output as: 10,20,20
+Compilation Error or Runtime Error
+
+
+Answer: The program will display the output as: 10,20,20
+
+Task 3
+
+Define Book class with multiple constructors so that the program compiles and runs without any error.
+
+
+
+class BookWithMultipleConstructors {
+   public static void main(String s[]) {
+       Book book1 = new Book("Java, The Complete Reference");
+       Book book2 = new Book("Java, The Complete Reference", "Herbert Schildt");
+       Book book3 = new Book("Java, The Complete Reference", "Herbert Schildt", 8);
+
+       System.out.println("Book 1 = " + book1.name);
+       System.out.println("Book 2 = " + book2.name + " - " + book2.author);
+       System.out.println("Book 3 = " + book3.name + " - " + book3.author + " - " + book3.edition);
+
+   }
+}
+
+class Book {
+    String name;
+    String author;
+    int edition;
+
+
+    public Book(String name, String author, int edition) {
+        this.name = name;
+        this.author = author;
+        this.edition = edition;
+    }
+
+    public Book(String name, String author) {
+        this.name = name;
+        this.author = author;
+    }
+
+    public Book(String name) {
+        this.name = name;
+    }
+}
+
+
+
+
+
+8. A Closer Look at Parameters(?)
+Which method declarations are valid declarations? Select the three correct answers.
+
+(a) void compute(int... is) { }
+(b) void compute(int is...) { }
+(c) void compute(int... is, int i, String... ss) { }
+(d) void compute(String... ds) { }
+(e) void compute(String... ss, int len) { }
+(f) void compute(char[] ca, int... is) { }
+
+
+9. Class Inheritance
+Task 1 (Inheritance)
+
+https://www.hackerrank.com/challenges/java-inheritance-1/problem
+
+Task 2 (Abstract class)
+
+https://www.hackerrank.com/challenges/java-abstract-class/problem
+
+Task 3 (Super keyword)
+https://www.hackerrank.com/challenges/java-method-overriding-2-super-keyword/problem
+
+
+ANSWER: String temp=super.define_me();
+
+
+
+10.More About Data Types
+
+Task 1
+
+Show two ways to concatenate two strings together to get the string "Hi, guys.":
+String hi = "Hi, ";
+String mom = "guys.";
+
+1) String newString = hi + mom;
+
+2)
+
+        StringBuilder stringBuilder = new StringBuilder(100);
+
+        stringBuilder.append(hi);
+        stringBuilder.append(mom);
+
+
+        System.out.println(stringBuilder);
+
+
+
+Task 2
+
+https://www.hackerrank.com/challenges/java-strings-introduction/problem
+
+
+Task 3
+
+https://www.hackerrank.com/challenges/java-substring/problem
+
+
+11. Exceptions and Error Handling
+https://www.hackerrank.com/challenges/java-exception-handling-try-catch/problem
+
+12. Working with Packages
+Skip tasks here
+
+13. Creating Abstract Relationships with Interfaces
+
+Task 2
+
+Which statements about interfaces are true?
+
+Select the two correct answers.
+
+(a)  Interfaces allow multiple implementation inheritance.
+(b)  Interfaces can be extended by any number of interfaces.
+(c)  Interfaces can extend any number of interfaces.
+(d)  Members of an interface are never static.
+(e)  Members of an interface can always be declared static.
+
+ANSWER: Interfaces allow multiple implementation inheritance.
+ANSWER: Interfaces can extend any number of interfaces.
+
+
+Task 3
+
+Which of these field declarations are legal within the body of an interface?
+
+ Select the three correct answers.
+
+
+(a) public static int answer = 42;
+
+(b) int answer;
+
+(c) final static int answer = 42;
+
+(d) public int answer = 42;
+
+(e) private final static int answer = 42;
+
+ANSWER:
+(a) public static int answer = 42;
+(c) final static int answer = 42;
+(d) public int answer = 42;
+
+
+Task 4
+
+Which statements about the keywords extends and implements are true?
+
+Select the two correct answers.
+
+(a)  The keyword extends is used to specify that an interface inherits from another interface.
+(b)  The keyword implements is used to specify that an interface inherits from
+another interface.
+(c)  The keyword implements is used to specify that a class inherits from an
+interface.
+(d)  The keyword implements is used to specify that a class inherits from another
+class.
+
+ANSWER:
+The keyword implements is used to specify that a class inherits from an
+interface.
+The keyword extends is used to specify that an interface inherits from another interface.
+
+
+
+Task 5
+
+Which statement is true about the following code?
+
+// Filename: MyClass.java
+abstract class MyClass implements Interface1, Interface2 {
+ public void f() { }
+ public void g() { }
+}
+interface Interface1 {
+ int VAL_A = 1;
+ int VAL_B = 2;
+ void f();
+ void g();
+}
+interface Interface2 { int VAL_B = 3;
+ int VAL_C = 4;
+ void g();
+ void h();
+}
+
+
+Select the one correct answer.
+
+(a)  MyClass only implements Interface1. Implementation for void h() fromInterface2 is missing.
+(b)  The declarations of void g() in the two interfaces conflict, therefore, the code will not compile.
+(c) The declarations of int VAL_B in the two interfaces conflict, therefore, the code will not compile.
+(d) Nothing is wrong with the code, it will compile without errors.
+
+ANSWER: (d) Nothing is wrong with the code, it will compile without errors.
+
+
+Task 5
+
+Which declaration can be inserted in (1) without causing a compilation error?
+
+interface MyConstants {
+ int r = 42;
+ int s = 69;
+ // (1) INSERT CODE HERE
+}
+
+Select the two correct answers.
+
+(a) final double circumference = 2 * Math.PI * r;
+
+(b) int total = total + r + s;
+
+(c) int AREA=r*s;
+
+(d) public static MAIN = 15;
+
+(e) protected int CODE = 31337;
+
+ANSWER: int AREA=r*s;
+final double circumference = 2 * Math.PI * r;
+
+
+14. Static Members, Nested Types, and Anonymous Classes
+Task 1
+
+Which statement is true? Select the one correct answer.
+
+(a)  A static method can call other non-static methods in the same class by using this keyword.
+(b)  A class may contain both static and non-static variables, and both static and non-static methods.
+(c)  Each object of a class has its own instance of the static variables declared in the class.
+(d)  Instance methods may access local variables of static methods.
+(e)  All methods in a class are implicitly passed this reference as argument,
+when invoked.
+
+ANSWER: (b)  A class may contain both static and non-static variables, and both static and non-static methods.
+
+Task 2
+
+What would be the result of compiling and running the following program?
+class MyClass {
+ static MyClass ref;
+ String[] arguments;
+ public static void main(String[] args) {
+    ref = new MyClass();
+    ref.func(args);
+ }
+
+ public void func(String[] args) {
+    ref.arguments = args;
+ }
+}
+
+Select the one correct answer.
+(a)  The program will fail to compile, since the static method main() cannot have a call to the non-static method func().
+(b)  The program will fail to compile, since the non-static method func() cannot access the static variable ref.
+(c)  The program will fail to compile, since the argument args passed to the static method main() cannot be passed to the non-static method func().
+(d)  The program will compile, but will throw an exception when run.
+(e)  The program will compile and run successfully.
+
+ANSWER: (e)  The program will compile and run successfully.
+
+Task 3
+
+ Given the following member declarations, which statement is true?
+
+int a; //1
+static int a; //2
+int f() {return a;} //3
+static int f() {return a;} //4
+
+Select the one correct answer.
+
+(a)  Declarations (1) and (3) cannot occur in the same class declaration.
+(b)  Declarations(2) and (4) cannot occur in the same class declaration.
+(c)  Declarations (1) and (4) cannot occur in the same class declaration.
+(d)  Declarations (2) and (3) cannot occur in the same class declaration.
+
+ANSWER: (c)  Declarations (1) and (4) cannot occur in the same class declaration.
+
