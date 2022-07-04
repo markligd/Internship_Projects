@@ -10,7 +10,7 @@ abstract class Book{
     }
 }
 
-class newBook extends Book{
+class NewBook extends Book{
     void setTitle(String s){
         title=s;
     }
@@ -22,7 +22,7 @@ public class Main{
 
         Scanner scanner=new Scanner(System.in);
         String titleInput=scanner.nextLine();
-        newBook newNovel=new newBook();
+        NewBook newNovel=new NewBook();
         System.out.println("The title is: "+newNovel.getTitle());
         newNovel.setTitle(titleInput);
 
